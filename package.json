@@ -13,10 +13,7 @@
     "version": "conventional-changelog -p angular -r 0 -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/znck/vuepack.git"
-  },
+  "repository": "https://github.com/znck/vuepack",
   "keywords": [
     "vue",
     "bundle",

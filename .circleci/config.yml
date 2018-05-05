@@ -33,3 +33,5 @@ jobs:
 
       # run tests!
       - run: pnpm test -- --ci --coverage
+
+      - run: cat coverage/lcov.info | pnpm coveralls

@@ -8,6 +8,7 @@
     "prebuild": "npm run test && rm -r dist/",
     "build": "tsc",
     "test": "jest",
+    "coveralls": "coveralls",
     "prepublishOnly": "npm run build",
     "version": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
@@ -60,6 +61,7 @@
     "@types/nopt": "^3.0.29",
     "@types/prettier": "^1.12.1",
     "conventional-changelog": "^1.1.24",
+    "coveralls": "^3.0.1",
     "jest": "^22.4.3",
     "ts-jest": "^22.4.4",
     "typescript": "^2.8.3",

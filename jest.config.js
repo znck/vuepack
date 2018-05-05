@@ -1,12 +1,8 @@
 module.exports = {
-  moduleFileExtensions: ['js', 'json', 'ts'],
-  moduleNameMapper: {
-    '^@/(.*)': '<rootDir>/src'
-  },
+  moduleFileExtensions: ['js', 'ts'],
   transform: {
-    '^.+\\.js$': 'babel-jest',
     '^.+\\.ts$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
   },
-  testMatch: ['**/?(*.)(spec|test).ts'],
+  testMatch: ['**/?(*.)spec.ts'],
   testEnvironment: 'node'
 }

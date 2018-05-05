@@ -24,50 +24,54 @@ async function run(
     files
       // Compile.
       .map(async (from: string): Promise<void> => {
-        const { filename, errors, tips, code } = await compile(
-          path.resolve(source, from),
-          await read(path.resolve(source, from))
-        )
-
-        const hasErrors = errors.length > 0
-        if (hasErrors) {
-          hasAnyErrors = true
-          logger.error(
-            'in ' +
-              from +
-              '\n' +
-              errors.map(error => '  - ' + error.replace(/\n/g, '\n  ')).join('\n')
+        try {
+          const { filename, errors, tips, code } = await compile(
+            path.resolve(source, from),
+            await read(path.resolve(source, from))
           )
-        }
-
-        if (tips.length && !silent) {
-          logger.info(
-            'for ' +
-              from +
-              '\n' +
-              tips.map(tip => '  - ' + tip.replace(/\n/g, '\n  ')).join('\n')
-          )
-        }
-
-        if (!hasErrors && filename && code) {
-          const to = path.relative(source, filename)
-
-          if (toStdOut) {
-            console.log(code)
-          } else if (!duplicates.has(to)) {
-            try {
-              await write(path.resolve(dest, to), code, overwrite)
-              !silent && logger.log('> ' + from + ' -> ' + to)
-            } catch (e) {
-              logger.error(e.message)
-            }
-            duplicates.set(to, from)
-          } else {
-            logger.fatal(
-              `Both '${duplicates.get(to)}' and ${from} are compiled to ${to}.`
+  
+          const hasErrors = errors.length > 0
+          if (hasErrors) {
+            hasAnyErrors = true
+            logger.error(
+              'in ' +
+                from +
+                '\n' +
+                errors.map(error => '  - ' + error.replace(/\n/g, '\n  ')).join('\n')
             )
-            logger.info('Rename one of the above files.')
           }
+  
+          if (tips.length && !silent) {
+            logger.info(
+              'for ' +
+                from +
+                '\n' +
+                tips.map(tip => '  - ' + tip.replace(/\n/g, '\n  ')).join('\n')
+            )
+          }
+  
+          if (!hasErrors && filename && code) {
+            const to = path.relative(source, filename)
+  
+            if (toStdOut) {
+              console.log(code)
+            } else if (!duplicates.has(to)) {
+              try {
+                await write(path.resolve(dest, to), code, overwrite)
+                !silent && logger.log('> ' + from + ' -> ' + to)
+              } catch (e) {
+                logger.error(e.message)
+              }
+              duplicates.set(to, from)
+            } else {
+              logger.fatal(
+                `Both '${duplicates.get(to)}' and ${from} are compiled to ${to}.`
+              )
+              logger.info('Rename one of the above files.')
+            }
+          }
+        } catch (e) {
+          logger.fatal('while processing ' + from, e)
         }
       })
   )
@@ -98,7 +102,7 @@ async function main(argv: string[]) {
 
     const isFile = (await promised(fs).lstat(file)).isFile()
     const dir = isFile ? path.dirname(file) : file
-    const dest = paths.length > 1 ? path.join(target, dir) : target
+    const dest = paths.length > 1 && !isFile ? path.join(target, filename) : target
     const files = isFile
       ? [file]
       : await promised({ glob }).glob('**', { cwd: dir, nodir: false })

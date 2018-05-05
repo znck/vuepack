@@ -9,7 +9,6 @@
     "build": "tsc",
     "test": "jest",
     "coveralls": "coveralls",
-    "prepublishOnly": "npm run build",
     "preversion": "npm run build",
     "version": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish"

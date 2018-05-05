@@ -1,3 +1,23 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/znck/vuepack/compare/v0.1.2...v0.1.3) (2018-05-05)
+
+
+### Bug Fixes
+
+* Filter only files in glob search ([f072c1f](https://github.com/znck/vuepack/commit/f072c1f))
+
+
+
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/znck/vuepack/compare/v0.1.1...v0.1.2) (2018-05-05)
+
+
+### Bug Fixes
+
+* Put compiled output to sub-directories if more than one input directories provided ([06485e8](https://github.com/znck/vuepack/commit/06485e8))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/znck/vuepack/compare/v0.1.1...v0.1.2) (2018-05-05)
 

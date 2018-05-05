@@ -15,6 +15,7 @@ dependencies:
   postcss-scss: 1.0.5
   prettier: 1.12.1
   resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
+  vue-template-compiler: 2.5.16
 devDependencies:
   '@types/babel-core': 6.25.3
   '@types/glob': 5.0.35
@@ -28,7 +29,6 @@ devDependencies:
   ts-jest: 22.4.5
   typescript: 2.8.3
   vue: 2.5.16
-  vue-template-compiler: 2.5.16
 optionalDependencies:
   less: 3.0.2
   node-sass: 4.9.0
@@ -2101,7 +2101,7 @@ packages:
     resolution:
       integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
   /de-indent/1.0.2:
-    dev: true
+    dev: false
     resolution:
       integrity: sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
   /debug/2.6.9:
@@ -2946,7 +2946,7 @@ packages:
     resolution:
       integrity: sha512-miowhl2+U7Qle4vdLqDdPt9m09K6yZhkLDTWGoUiUzrQCn+mHHSmfJgAyGaLRZbPmTqfFFjRV1QWCW0VWUJBbQ==
   /he/1.1.1:
-    dev: true
+    dev: false
     resolution:
       integrity: sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
   /hoek/2.16.3:
@@ -5876,7 +5876,7 @@ packages:
     dependencies:
       de-indent: 1.0.2
       he: 1.1.1
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-ZbuhCcF/hTYmldoUOVcu2fcbeSAZnfzwDskGduOrnjBiIWHgELAd+R8nAtX80aZkceWDKGQ6N9/0/EUpt+l22A==
   /vue-template-es2015-compiler/1.6.0:

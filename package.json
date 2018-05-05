@@ -1,5 +1,5 @@
 {
-  "name": "vuepack",
+  "name": "@znck/vuec",
   "version": "0.1.0",
   "description": "Package Vue components as they should be!",
   "main": "dist/index.js",

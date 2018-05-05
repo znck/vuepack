@@ -19,13 +19,13 @@ devDependencies:
   '@types/babel-core': 6.25.3
   '@types/glob': 5.0.35
   '@types/jest': 22.2.3
-  '@types/node': 10.0.3
+  '@types/node': 10.0.4
   '@types/nopt': 3.0.29
   '@types/prettier': 1.12.1
   babel-jest: 22.4.3
   conventional-changelog: 1.1.24
   jest: 22.4.3
-  ts-jest: 22.4.4
+  ts-jest: 22.4.5
   typescript: 2.8.3
   vue: 2.5.16
   vue-template-compiler: 2.5.16
@@ -52,7 +52,7 @@ packages:
       json5: 0.5.1
       lodash: 4.17.10
       micromatch: 2.3.11
-      resolve: 1.7.1
+      resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
       semver: 5.5.0
       source-map: 0.5.7
     dev: false
@@ -960,10 +960,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/10.0.3:
-    dev: true
-    resolution:
-      integrity: sha512-J7nx6JzxmtT4zyvfLipYL7jNaxvlCWpyG7JhhCQ4fQyG+AGfovAHoYR55TFx+X8akfkUJYpt5JG6GPeFMjZaCQ==
   /@types/node/10.0.4:
     dev: true
     resolution:
@@ -1566,7 +1562,7 @@ packages:
       integrity: sha1-Ql1opY00R/AqBKqJQYf86K+Le44=
   /browser-resolve/1.11.2:
     dependencies:
-      resolve: 1.1.7
+      resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
     dev: true
     resolution:
       integrity: sha1-j/CbCixCFxihBRwmCzLkj0QpOM4=
@@ -2003,7 +1999,7 @@ packages:
       glob2base: 0.0.12
       minimatch: 3.0.4
       mkdirp: 0.5.1
-      resolve: 1.7.1
+      resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
       safe-buffer: 5.1.2
       shell-quote: 1.6.1
       subarg: 1.0.0
@@ -2580,14 +2576,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk=
-  /fs-extra/4.0.3:
+  /fs-extra/6.0.0:
     dependencies:
       graceful-fs: 4.1.11
       jsonfile: 4.0.0
       universalify: 0.1.1
     dev: true
     resolution:
-      integrity: sha512-q6rbdDd1o2mAnQreO7YADIxf/Whx4AHBiRf6d+/cVT8h44ss+lHgxf1FemcqDnQt9X3ct4McHr+JMGlYSsK7Cg==
+      integrity: sha512-lk2cUCo8QzbiEWEbt7Cw3m27WMiRG321xsssbcIpfMhpRjrlC08WBOVQqj1/nQYYNnPtyIhP1oqLO3QwT2tPCw==
   /fs.realpath/1.0.0:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
@@ -5114,15 +5110,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
-  /resolve/1.1.7:
-    dev: true
-    resolution:
-      integrity: sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
-  /resolve/1.7.1:
-    dependencies:
-      path-parse: 1.0.5
-    resolution:
-      integrity: sha512-c7rwLofp8g1U+h1KNyHL/jicrKg1Ek4q+Lr33AL65uZTinUZHe30D5HlyN5V9NW0JX1D5dXQ4jqW5l7Sy/kGfw==
   /ret/0.1.15:
     dev: true
     engines:
@@ -5708,15 +5695,16 @@ packages:
     optional: true
     resolution:
       integrity: sha1-fskRMJJHZsf1c74wIMNPj9/QDWI=
-  /ts-jest/22.4.4:
+  /ts-jest/22.4.5:
     dependencies:
       babel-core: 6.26.3
       babel-plugin-istanbul: 4.1.6
       babel-plugin-transform-es2015-modules-commonjs: 6.26.2
       babel-preset-jest: 22.4.3
       cpx: 1.5.0
-      fs-extra: 4.0.3
+      fs-extra: 6.0.0
       jest-config: 22.4.3
+      lodash: 4.17.10
       pkg-dir: 2.0.0
       yargs: 11.0.0
     dev: true
@@ -5724,7 +5712,7 @@ packages:
       jest: ^22.4.0 || ^22.5.0-alpha.1 || ^23.0.0-alpha.1
       typescript: 2.x
     resolution:
-      integrity: sha512-v9pO7u4HNMDSBCN9IEvlR6taDAGm2mo7nHEDLWyoFDgYeZ4aHm8JHEPrthd8Pmcl4eCM8J4Ata4ROR/cwFRV2A==
+      integrity: sha512-3LkEkPzKutk+klOxtAhvTdYc9ZK7lHugyPg4VNj+l8jg7CCOBgAHqp009MWdT6WllYeSoWHcQaB3aJ6/JbTMJg==
   /tunnel-agent/0.4.3:
     dev: false
     optional: true
@@ -6104,10 +6092,8 @@ packages:
   github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2:
     dependencies:
       path-parse: 1.0.5
-    dev: false
     name: resolve
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/zkochan/node-resolve/tar.gz/75108bc1d196f0cf770c3c7777f349cc4c3373b2'
     version: 1.7.0
 registry: 'https://registry.npmjs.org/'

@@ -1,4 +1,4 @@
-# VuePack
+# VuePack [![Build Status](https://circleci.com/gh/znck/vuepack/tree/master.svg?style=shield)](https://circleci.com/gh/znck/vuepack/)
 
 > EXPERIMENTAL: DO NOT USE IN PRODUCTION.
 

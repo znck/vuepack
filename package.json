@@ -10,7 +10,7 @@
     "test": "jest",
     "coveralls": "coveralls",
     "preversion": "npm run build",
-    "version": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "version": "conventional-changelog -p angular -r 0 -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {

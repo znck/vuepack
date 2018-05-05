@@ -1,0 +1,6 @@
+@import './style-scss';
+
+.title {
+  $color: red !default;
+  color: $color;
+}

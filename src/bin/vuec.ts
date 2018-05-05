@@ -105,7 +105,7 @@ async function main(argv: string[]) {
     const dest = paths.length > 1 && !isFile ? path.join(target, filename) : target
     const files = isFile
       ? [file]
-      : await promised({ glob }).glob('**', { cwd: dir, nodir: false })
+      : await promised({ glob }).glob('**', { cwd: dir, nodir: true })
 
     hasAnyErrors = await run(dir, dest, files, {
       toStdOut: !options.outDir && paths.length === 1,

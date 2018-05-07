@@ -20,21 +20,21 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
+          - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
       # Install dependencies.
-      - run: pnpm install --shamefully-flatten --frozen-shrinkwrap --force
+      - run: pnpm install --frozen-shrinkwrap
 
       # Delete unused packages
-      - run: pnpm store --shamefully-flatten --force prune
+      - run: pnpm store prune
 
       - save_cache:
           paths:
             - node_modules
             - ~/.pnpm-store
-          key: v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
       - run: pnpm test -- --ci --coverage

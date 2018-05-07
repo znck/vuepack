@@ -9,5 +9,9 @@ function readPackage (pkg) {
     pkg.dependencies.resolve = 'zkochan/node-resolve'
   }
 
+  if (pkg.name === 'ts-jest') {
+    pkg.dependencies['source-map-support'] = '*'
+  }
+
   return pkg
 }

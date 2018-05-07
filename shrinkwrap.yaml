@@ -6140,7 +6140,7 @@ specifiers:
   postcss-sass: ^0.3.1
   postcss-scss: ^1.0.5
   prettier: ^1.12.1
-  resolve: zkochan/node-resolve
+  resolve: 'github:zkochan/node-resolve'
   ts-jest: ^22.4.4
   typescript: ^2.8.3
   vue: ^2.5.16

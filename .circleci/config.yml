@@ -24,14 +24,20 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      # Install dependencies.
       - run: pnpm install --shamefully-flatten --frozen-shrinkwrap --force
+
+      # Delete unused packages
+      - run: pnpm store --shamefully-flatten --force prune
 
       - save_cache:
           paths:
             - node_modules
+            - ~/.pnpm-store
           key: v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
 
       # run tests!
       - run: pnpm test -- --ci --coverage
 
+      # publish coverage reports
       - run: cat coverage/lcov.info | pnpm run coveralls

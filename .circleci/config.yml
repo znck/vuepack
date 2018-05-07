@@ -41,3 +41,6 @@ jobs:
 
       # publish coverage reports
       - run: cat coverage/lcov.info | pnpm run coveralls
+
+      - store_test_results:
+        path: coverage

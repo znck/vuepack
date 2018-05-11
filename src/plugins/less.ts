@@ -1,6 +1,4 @@
 import {ComponentRewriterAPI, CustomBlock, CustomFile, FileRewriterAPI, Plugin} from "../api"
-import {checkUnsupportedImports} from './style'
-import parser from "postcss-less"
 
 export default class LessPlugin implements Plugin {
   name: 'less'
@@ -11,16 +9,9 @@ export default class LessPlugin implements Plugin {
   }
 
   async processFile(file: CustomFile, api: FileRewriterAPI): Promise<void> {
-    const {errors, code} = await checkUnsupportedImports(file.content, {parser}, file.filename)
-
-    if (errors.length) {
-      errors.map((error: string) => api.error(error))
-      return
-    }
-
     try {
       api.name(file.filename.replace(this.EXT_REGEX, '.css'))
-      api.content((await require('less').render(code || file.content)).css)
+      api.content(await this.compile(file.filename, file.content))
     } catch (e) {
       api.error(e)
     }
@@ -38,17 +29,16 @@ export default class LessPlugin implements Plugin {
       return
     }
 
-    const {errors, code} = await checkUnsupportedImports(block.content, {parser}, block.filename)
-
-    if (errors.length) {
-      errors.map((error: string) => api.error(error))
-      return
-    }
-
     try {
-      api.addBlock('style', block.attrs, (await require('less').render(code || block.content)).css)
+      api.addBlock('style', block.attrs, await this.compile(block.filename, block.content))
     } catch (e) {
       api.error(e)
     }
+  }
+
+  private async compile(filename: string, content: string): Promise<string> {
+    const result = await require('less').render(content, { filename })
+
+    return result.css
   }
 }

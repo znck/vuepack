@@ -5,19 +5,22 @@ import nopt = require('nopt')
 import logger = require('consola')
 import * as path from 'path'
 import * as fs from 'fs'
-import plugins from '../plugins'
+import promised from '@znck/promised'
+import DEFAULT_PLUGINS from '../plugins'
 import{ compile } from '../index'
-import { promised, all, read, write } from '../utils'
+import { all, read, write } from '../utils'
+import { Plugin, BlockPlugin, FilePlugin } from '../api';
 
 async function run(
   source: string,
   dest: string,
   files: string[],
   {
+    plugins = [],
     toStdOut = false,
     overwrite = false,
     silent = false
-  }: { toStdOut: boolean; overwrite: boolean; silent: boolean }
+  }: { plugins: Array<Plugin | BlockPlugin | FilePlugin> , toStdOut: boolean; overwrite: boolean; silent: boolean }
 ): Promise<boolean> {
   let hasAnyErrors = false
   const duplicates = new Map()
@@ -29,7 +32,7 @@ async function run(
           const { filename, errors, tips, code } = await compile(
             path.resolve(source, from),
             await read(path.resolve(source, from)),
-            plugins
+            [...DEFAULT_PLUGINS, ...plugins]
           )
   
           const hasErrors = errors.length > 0
@@ -85,13 +88,26 @@ async function main(argv: string[]) {
     2
   )
 
-  const paths = options.argv.remain.length ? options.argv.remain : ['src']
-  const target = options.outDir
-    ? path.resolve(process.cwd(), options.outDir)
-    : path.join(process.cwd(), 'dist')
+  let config = { 
+    force: options.force,
+    paths: options.argv.remain.length ? options.argv.remain : ['src'],
+    plugins: [],
+    silent: options.silent,
+    target: options.outDir
+      ? path.resolve(process.cwd(), options.outDir)
+      : path.join(process.cwd(), 'dist')
+  }
+  const configPath = path.join(process.cwd(), 'vuec.config.js')
+  const hasConfigFile = await promised(fs).exists(configPath)
+  if (hasConfigFile) {
+    logger.info('Using config from vuec.config.js.')
+    const local = require(configPath)
+
+    config = { ...config, ...local }
+  }
   let hasAnyErrors: boolean = true
 
-  for (const filename of paths) {
+  for (const filename of config.paths) {
     const file = path.resolve(process.cwd(), filename)
     if (!(await promised(fs).exists(file))) {
       logger.error(`No such file or directory, ${filename}`)
@@ -100,15 +116,16 @@ async function main(argv: string[]) {
 
     const isFile = (await promised(fs).lstat(file)).isFile()
     const dir = isFile ? path.dirname(file) : file
-    const dest = paths.length > 1 && !isFile ? path.join(target, filename) : target
+    const dest = config.paths.length > 1 && !isFile ? path.join(config.target, filename) : config.target
     const files = isFile
       ? [file]
       : await promised({ glob }).glob('**', { cwd: dir, nodir: true })
 
     hasAnyErrors = await run(dir, dest, files, {
-      toStdOut: !options.outDir && paths.length === 1,
-      silent: options.silent,
-      overwrite: options.force
+      plugins: config.plugins,
+      toStdOut: !hasConfigFile && !options.outDir && config.paths.length === 1,
+      silent: config.silent,
+      overwrite: config.force
     })
   }
 

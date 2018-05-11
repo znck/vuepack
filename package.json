@@ -9,9 +9,13 @@
     "build": "tsc",
     "test": "jest",
     "coveralls": "coveralls",
-    "preversion": "npm run build",
-    "version": "conventional-changelog -p angular -r 0 -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "postversion": "git push && git push --tags && npm publish"
+    "prepublishOnly": "npm run build",
+    "docs": "typedoc typings src/index.ts"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "pnpm test && pnpm docs && git add docs/"
+    }
   },
   "repository": "https://github.com/znck/vuepack",
   "keywords": [

@@ -13,10 +13,15 @@ import {
 export class MessageBag implements MessageBagAPI {
   errors: Array<string | Error>
   tips: string[]
+  scope: string = ''
 
   constructor() {
     this.errors = []
     this.tips = []
+  }
+
+  setScope(name: string) {
+    this.scope = name
   }
 
   error(error: Error | string): void {
@@ -38,7 +43,7 @@ export class MessageBag implements MessageBagAPI {
 
 export class FileRewriter extends MessageBag implements FileRewriterAPI {
   input: CustomFile
-  output: { name?: string, content?: string } = {}
+  output: { filename?: string, content?: string } = {}
 
   constructor(input: CustomFile) {
     super()
@@ -46,7 +51,7 @@ export class FileRewriter extends MessageBag implements FileRewriterAPI {
   }
 
   name(filename: string): void {
-    this.output.name = filename
+    this.output.filename = filename
   }
 
   content(content: string): void {
@@ -58,8 +63,8 @@ export class FileRewriter extends MessageBag implements FileRewriterAPI {
 
     return {
       ...super.write(),
-      filename: this.output.name || this.input.filename,
-      code: this.output.content || this.input.content
+      filename: this.output.filename || this.input.filename,
+      code: this.output.content
     }
   }
 }
@@ -137,7 +142,7 @@ export class ComponentRewriter extends MessageBag implements ComponentRewriterAP
   }
 
   createBlock(type: string, attrs: { [key: string]: string }, code?: string): void {
-    this.block({type, attrs, code, content: ''})
+    this.block({ filename: '', type, attrs, code, content: ''})
   }
 
   addBlock(block: CustomBlock | string, attrs?: { [p: string]: string }, content?: string): void {
@@ -195,31 +200,31 @@ function normalizeBlock(block: SFCCustomBlock | SFCBlock, filename?: string): Cu
   return output as CustomBlock
 }
 
-export async function compile(name: string, content: string, plugins: Array<Plugin | BlockPlugin | FilePlugin>): Promise<ProcessedResults> {
-  let isVue = /\.vue$/gi.test(name)
+export async function compile(filename: string, content: string, plugins: Array<Plugin | BlockPlugin | FilePlugin>): Promise<ProcessedResults> {
+  let isVue = /\.vue$/gi.test(filename)
 
   if (!isVue) {
-    const file = {name, content}
+    const file = {filename, content}
     const api = new FileRewriter(file)
 
     for (const plugin of plugins) {
-      if ((plugin as FilePlugin).testFile && (plugin as FilePlugin).testFile(name)) {
+      if ((plugin as FilePlugin).testFile && (plugin as FilePlugin).testFile(filename)) {
         await (plugin as FilePlugin).processFile(file, api)
       }
     }
 
     return api.write()
-  }
+  } else {
+    const api = new ComponentRewriter(filename, parse({filename: filename, source: content}))
 
-  const api = new ComponentRewriter(name, parse({filename: name, source: content}))
-
-  await api.forEach(async block => {
-    for (const plugin of plugins) {
-      if ((plugin as BlockPlugin).testBlock && (plugin as BlockPlugin).testBlock(block.type, block.attrs.src || block.lang)) {
-        await (plugin as BlockPlugin).processBlock({...block, attrs: {...block.attrs}}, api)
+    await api.forEach(async block => {
+      for (const plugin of plugins) {
+        if ((plugin as BlockPlugin).testBlock && (plugin as BlockPlugin).testBlock(block.type, block.attrs.src || block.lang)) {
+          await (plugin as BlockPlugin).processBlock({...block, attrs: {...block.attrs}}, api)
+        }
       }
-    }
-  })
+    })
 
-  return api.write()
+    return api.write()
+  }
 }

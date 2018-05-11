@@ -56,8 +56,7 @@ describe('with scss', () => {
   })
 
   test('compiles without error', () => expect(content.errors).toEqual([]))
-  test('compile scss', () => expect(content.code).toEqual(expect.stringContaining(`--color: red`)))
-  test('compile scss', () => expect(content.code).toEqual(expect.stringContaining(`color: var(--color);`)))
+  test('compile scss', () => expect(content.code).toEqual(expect.stringContaining(`color: red;`)))
   test('remove style language', () => expect(content.code).toEqual(expect.stringContaining(`<style scoped>`)))
 })
 
@@ -80,8 +79,7 @@ describe('with sass', () => {
   })
 
   test('compiles without error', () => expect(content.errors).toEqual([]))
-  test('compile sass', () => expect(content.code).toEqual(expect.stringContaining(`--color: red`)))
-  test('compile sass', () => expect(content.code).toEqual(expect.stringContaining(`color: var(--color);`)))
+  test('compile sass', () => expect(content.code).toEqual(expect.stringContaining(`color: red;`)))
   test('remove style language', () => expect(content.code).toEqual(expect.stringContaining(`<style scoped>`)))
 })
 
@@ -104,8 +102,7 @@ describe('with less', () => {
   })
 
   test('compiles without error', () => expect(content.errors).toEqual([]))
-  test('compile less', () => expect(content.code).toEqual(expect.stringContaining(`--color: red`)))
-  test('compile less', () => expect(content.code).toEqual(expect.stringContaining(`color: var(--color);`)))
+  test('compile less', () => expect(content.code).toEqual(expect.stringContaining(`color: red;`)))
   test('remove style language', () => expect(content.code).toEqual(expect.stringContaining(`<style scoped>`)))
 })
 

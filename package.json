@@ -10,11 +10,12 @@
     "test": "jest",
     "coveralls": "coveralls",
     "prepublishOnly": "npm run build",
-    "docs": "typedoc typings src/index.ts"
+    "docs": "typedoc --ignoreCompilerErrors typings src/index.ts",
+    "release": "standard-version -a"
   },
   "standard-version": {
     "scripts": {
-      "postchangelog": "pnpm test && pnpm docs && git add docs/"
+      "postchangelog": "pnpm test && pnpm run docs && git add docs/"
     }
   },
   "repository": "https://github.com/znck/vuepack",

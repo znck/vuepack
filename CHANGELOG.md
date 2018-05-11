@@ -1,3 +1,18 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/znck/vuepack/compare/v0.1.3...v0.2.0) (2018-05-11)
+
+
+### Features
+
+* Load config file from process directory ([df17f7b](https://github.com/znck/vuepack/commit/df17f7b))
+* Plugins architecture to slim down the core ([a75cb92](https://github.com/znck/vuepack/commit/a75cb92))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/znck/vuepack/compare/v0.1.2...v0.1.3) (2018-05-05)
 
@@ -36,6 +51,3 @@
 ### Features
 
 * Comple less, scss, sass and typescript ([07db684](https://github.com/znck/vuepack/commit/07db684))
-
-
-

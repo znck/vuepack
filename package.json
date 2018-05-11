@@ -10,7 +10,7 @@
     "test": "jest",
     "coveralls": "coveralls",
     "prepublishOnly": "npm run build",
-    "docs": "typedoc --ignoreCompilerErrors typings src/index.ts",
+    "docs": "typedoc --ignoreCompilerErrors typings src",
     "release": "standard-version -a"
   },
   "standard-version": {

@@ -4,7 +4,7 @@ module.exports = {
   out: 'docs/',
   excludeExternals: true,
   excludePrivate: true,
-  mode: 'file',
+  mode: 'modules',
   hideGenerator: true,
   gitRevision: 'v' + version
 }

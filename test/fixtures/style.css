@@ -1,0 +1,5 @@
+@import "./import.css";
+
+div {
+    color: var(--color);
+}

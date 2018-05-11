@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-$color: 'red';
+$color: red;
 
 div
   color: $color;

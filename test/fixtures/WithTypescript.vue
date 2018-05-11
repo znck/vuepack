@@ -17,6 +17,6 @@ export default Vue.extend({
 
 <style scoped>
 div {
-  color: 'red';
+  color: red;
 }
 </style>

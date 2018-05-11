@@ -1,4 +1,6 @@
-$color: 'red';
+@import "style";
+@import "import-sass.sass";
+@import "./import-scss.scss" print;
 
 div {
   color: $color;

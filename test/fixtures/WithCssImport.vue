@@ -13,8 +13,4 @@ export default {
 }
 </script>
 
-<style scoped>
-div {
-  color: 'red';
-}
-</style>
+<style scoped src="./style.css"></style>

@@ -1,5 +1,5 @@
 <template>
-<div>Example</div>
+  <div>Example</div>
 </template>
 
 <script>
@@ -13,10 +13,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-$color: red;
-
+<style scoped>
 div {
-  color: $color;
+  color: red;
 }
 </style>

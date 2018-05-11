@@ -2,10 +2,10 @@
   <div>Example</div>
 </template>
 
-<script src="./script.ts"></script>
+<script src="./typescript.ts"></script>
 
 <style scoped>
 div {
-  color: 'red';
+  color: red;
 }
 </style>

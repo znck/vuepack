@@ -25,7 +25,7 @@ jobs:
           - v1-dependencies-
 
       # Install dependencies.
-      - run: pnpm install --frozen-shrinkwrap
+      - run: pnpm install --prefer-frozen-shrinkwrap
 
       # Delete unused packages
       - run: pnpm store prune

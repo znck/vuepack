@@ -1,22 +1,8 @@
 import * as path from "path"
 import * as fs from "fs"
-import prettier from 'prettier'
+const prettier = require('prettier')
 
-export * from '@znck/promised'
 import promised from '@znck/promised'
-
-export { promised }
-
-export interface CompilerOptions {
-  filename?: string
-}
-
-export interface CompilerResult {
-  code?: string
-  map?: any
-  tips: string[]
-  errors: string[]
-}
 
 export async function all<T>(promises: Array<Promise<T>>): Promise<Array<T>> {
   return Promise.all(promises)

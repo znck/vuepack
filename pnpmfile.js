@@ -1,3 +1,5 @@
+const self = require('./package')
+
 module.exports = {
   hooks: {
     readPackage
@@ -11,6 +13,7 @@ function readPackage (pkg) {
 
   if (pkg.name === 'ts-jest') {
     pkg.dependencies['source-map-support'] = '*'
+    pkg.dependencies['babel-core'] = self.dependencies['babel-core']
   }
 
   return pkg

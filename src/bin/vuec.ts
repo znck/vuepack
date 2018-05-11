@@ -5,7 +5,8 @@ import nopt = require('nopt')
 import logger = require('consola')
 import * as path from 'path'
 import * as fs from 'fs'
-import { compile } from '../'
+import plugins from '../plugins'
+import{ compile } from '../index'
 import { promised, all, read, write } from '../utils'
 
 async function run(
@@ -27,18 +28,15 @@ async function run(
         try {
           const { filename, errors, tips, code } = await compile(
             path.resolve(source, from),
-            await read(path.resolve(source, from))
+            await read(path.resolve(source, from)),
+            plugins
           )
   
           const hasErrors = errors.length > 0
           if (hasErrors) {
             hasAnyErrors = true
-            logger.error(
-              'in ' +
-                from +
-                '\n' +
-                errors.map(error => '  - ' + error.replace(/\n/g, '\n  ')).join('\n')
-            )
+            logger.error('in ' + from)
+            errors.forEach((error: string | Error) => console.error(error))
           }
   
           if (tips.length && !silent) {
@@ -46,7 +44,7 @@ async function run(
               'for ' +
                 from +
                 '\n' +
-                tips.map(tip => '  - ' + tip.replace(/\n/g, '\n  ')).join('\n')
+                tips.map((tip: string) => '  - ' + tip.replace(/\n/g, '\n  ')).join('\n')
             )
           }
   
@@ -71,7 +69,7 @@ async function run(
             }
           }
         } catch (e) {
-          logger.fatal('while processing ' + from, e)
+          logger.fatal('while processing ' + from, e.stack)
         }
       })
   )
@@ -91,7 +89,7 @@ async function main(argv: string[]) {
   const target = options.outDir
     ? path.resolve(process.cwd(), options.outDir)
     : path.join(process.cwd(), 'dist')
-  let hasAnyErrors = false
+  let hasAnyErrors: boolean = true
 
   for (const filename of paths) {
     const file = path.resolve(process.cwd(), filename)
@@ -114,7 +112,7 @@ async function main(argv: string[]) {
     })
   }
 
-  if (hasAnyErrors) process.exit(1)
+  if (hasAnyErrors === true) process.exit(1)
 }
 
 if (process.argv.find(arg => arg === '-h' || arg === '--help')) {
@@ -132,5 +130,5 @@ if (process.argv.find(arg => arg === '-h' || arg === '--help')) {
   -s, --silent            No console output.
   `)
 } else {
-  main(process.argv)
+  main(process.argv).catch((error: Error) => logger.fatal(error))
 }

@@ -15,6 +15,7 @@ dependencies:
   postcss-scss: 1.0.5
   prettier: 1.12.1
   resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
+  sugarss: 1.0.1
   vue-template-compiler: 2.5.16
 devDependencies:
   '@types/babel-core': 6.25.3
@@ -976,7 +977,7 @@ packages:
     dependencies:
       consolidate: 0.15.1
       hash-sum: 1.0.2
-      lru-cache: 4.1.2
+      lru-cache: 4.1.3
       merge-source-map: 1.1.0
       postcss: 6.0.22
       postcss-selector-parser: 3.1.1
@@ -1299,7 +1300,6 @@ packages:
     resolution:
       integrity: sha512-6jyFLuDmeidKmUEb3NM+/yawG0M2bDZ9Z1qbZP59cyHLz8kYGKYwpJP0UwUKKUiTRNvxfLesJnTedqczP7cTDA==
   /babel-core/7.0.0-bridge.0:
-    dev: false
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -1385,7 +1385,7 @@ packages:
     dependencies:
       babel-core: 6.26.3
       babel-runtime: 6.26.0
-      core-js: 2.5.5
+      core-js: 2.5.6
       home-or-tmp: 2.0.0
       lodash: 4.17.10
       mkdirp: 0.5.1
@@ -1395,7 +1395,7 @@ packages:
       integrity: sha1-btAhFz4vy0htestFxgCahW9kcHE=
   /babel-runtime/6.26.0:
     dependencies:
-      core-js: 2.5.5
+      core-js: 2.5.6
       regenerator-runtime: 0.11.1
     dev: true
     resolution:
@@ -1559,7 +1559,7 @@ packages:
       integrity: sha1-j/CbCixCFxihBRwmCzLkj0QpOM4=
   /browserslist/3.2.6:
     dependencies:
-      caniuse-lite: 1.0.30000835
+      caniuse-lite: 1.0.30000836
       electron-to-chromium: 1.3.45
     dev: false
     resolution:
@@ -1647,10 +1647,16 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
-  /caniuse-lite/1.0.30000835:
+  /caniuse-lite/1.0.30000836:
     dev: false
     resolution:
-      integrity: sha512-88MbwAwuVWfwC4xHwKx9Z/VSvmIfLPwURhmxTPqP5Cx6zHQ0xa2AFKJvTdC2aUn07f2tR9yvYL83CollBFANEA==
+      integrity: sha512-DlVR8sVTKDgd7t95U0shX3g7MeJ/DOjKOhUcaiXqnVmnO5sG4Tn2rLVOkVfPUJgnQNxnGe8/4GK0dGSI+AagQw==
+  /capture-exit/1.2.0:
+    dependencies:
+      rsvp: 3.6.2
+    dev: true
+    resolution:
+      integrity: sha1-HF/MSJ/QqwDU8ax64QcuMXP7q28=
   /caseless/0.11.0:
     dev: false
     optional: true
@@ -1973,10 +1979,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
-  /core-js/2.5.5:
+  /core-js/2.5.6:
     dev: true
     resolution:
-      integrity: sha1-sU3ek2xkDAV5prUMq8wTLdYSfjs=
+      integrity: sha512-lQUVfQi0aLix2xpyjrrJEvfuYCqPc/HwmTKsC/VNf8q0zsjX7SQZtp4+oRONN5Tsur9GDETPjj+Ub2iDiGZfSQ==
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -2011,7 +2017,7 @@ packages:
       integrity: sha1-GFvgGFEdhycN7czCkxceN2VauI8=
   /cross-spawn/3.0.1:
     dependencies:
-      lru-cache: 4.1.2
+      lru-cache: 4.1.3
       which: 1.3.0
     dev: false
     optional: true
@@ -2019,7 +2025,7 @@ packages:
       integrity: sha1-ElYDfsufDF9549bvE14wdwGEuYI=
   /cross-spawn/5.1.0:
     dependencies:
-      lru-cache: 4.1.2
+      lru-cache: 4.1.3
       shebang-command: 1.2.0
       which: 1.3.0
     dev: true
@@ -3562,7 +3568,7 @@ packages:
       jest-serializer: 22.4.3
       jest-worker: 22.4.3
       micromatch: 2.3.11
-      sane: 2.5.1
+      sane: 2.5.2
     dev: true
     resolution:
       integrity: sha512-4Q9fjzuPVwnaqGKDpIsCSoTSnG3cteyk2oNVjBX12HHOaF1oxql+uUiqZb5Ndu7g/vTZfdNwwy4WwYogLh29DQ==
@@ -4030,12 +4036,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-W0b4AUft7leIcPCG0Eghz5mOVR8=
-  /lru-cache/4.1.2:
+  /lru-cache/4.1.3:
     dependencies:
       pseudomap: 1.0.2
       yallist: 2.1.2
     resolution:
-      integrity: sha512-wgeVXhrDwAWnIF/yZARsFnMBtdFXOg1b8RIrhilp+0iDYN4mdQcNZElDZ0e4B64BhaxeQ5zN7PMyvu7we1kPeQ==
+      integrity: sha512-fFEhvcgzuIoJVUF8fYr5KR0YqxD238zgObTps31YdADwPPAp82a4M8TrckkWyx7ekNlf9aBcVn81cFwwXngrJA==
   /makeerror/1.0.11:
     dependencies:
       tmpl: 1.0.4
@@ -5144,6 +5150,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lreewLK/BlghmxtfH36YYVg1i8IAce4TI7oao75I1g245+6BctqTVQiBP3YUJ9C6DQOXJmkYR9X9fCLtCOJc5w==
+  /rsvp/3.6.2:
+    dev: true
+    engines:
+      node: 0.12.* || 4.* || 6.* || >= 7.*
+    resolution:
+      integrity: sha512-OfWGQTb9vnwRjwtA2QwpG2ICclHC3pgXZO5xt8H2EfgDquO0qVdSb5T88L4qJVAEugbS56pAuV4XZM58UX8ulw==
   /safe-buffer/5.1.2:
     dev: true
     resolution:
@@ -5154,9 +5166,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-QKNmnzsHfR6UPURinhV91IAjvy4=
-  /sane/2.5.1:
+  /sane/2.5.2:
     dependencies:
       anymatch: 2.0.0
+      capture-exit: 1.2.0
       exec-sh: 0.2.1
       fb-watchman: 2.0.0
       micromatch: 3.1.10
@@ -5169,7 +5182,7 @@ packages:
     optionalDependencies:
       fsevents: 1.2.3
     resolution:
-      integrity: sha1-pVzucHS+0yE7VLQIie55H6L1AXY=
+      integrity: sha1-tNwYYcIbQn6SlQej51HiosuKs/o=
   /sass-graph/2.2.4:
     dependencies:
       glob: 7.1.2
@@ -5557,6 +5570,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-9izxdYHplrSPyWVpn1TAauJouNI=
+  /sugarss/1.0.1:
+    dependencies:
+      postcss: 6.0.22
+    dev: false
+    resolution:
+      integrity: sha512-3qgLZytikQQEVn1/FrhY7B68gPUUGY3R1Q1vTiD5xT+Ti1DP/8iZuwFet9ONs5+bmL8pZoDQ6JrQHVgrNlK6mA==
   /supports-color/2.0.0:
     engines:
       node: '>=0.8.0'
@@ -5710,7 +5729,7 @@ packages:
       integrity: sha1-fskRMJJHZsf1c74wIMNPj9/QDWI=
   /ts-jest/22.4.5:
     dependencies:
-      babel-core: 6.26.3
+      babel-core: 7.0.0-bridge.0
       babel-plugin-istanbul: 4.1.6
       babel-plugin-transform-es2015-modules-commonjs: 6.26.2
       babel-preset-jest: 22.4.3
@@ -6141,6 +6160,7 @@ specifiers:
   postcss-scss: ^1.0.5
   prettier: ^1.12.1
   resolve: zkochan/node-resolve
+  sugarss: ^1.0.1
   ts-jest: ^22.4.4
   typescript: ^2.8.3
   vue: ^2.5.16

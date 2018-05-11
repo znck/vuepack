@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MessageBag | @znck/vuec</title>
+	<title>LessPlugin | @znck/vuec</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="messagebag.html">MessageBag</a>
+					<a href="../modules/_plugins_less_.html">&quot;plugins/less&quot;</a>
+				</li>
+				<li>
+					<a href="_plugins_less_.lessplugin.html">LessPlugin</a>
 				</li>
 			</ul>
-			<h1>Class MessageBag</h1>
+			<h1>Class LessPlugin</h1>
 		</div>
 	</div>
 </header>
@@ -68,22 +71,17 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">MessageBag</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="filerewriter.html" class="tsd-signature-type">FileRewriter</a>
-							</li>
-							<li>
-								<a href="componentrewriter.html" class="tsd-signature-type">ComponentRewriter</a>
-							</li>
-						</ul>
+						<span class="target">LessPlugin</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">MessageBagAPI</span></li>
+					<li><a href="../interfaces/_api_.blockplugin.html" class="tsd-signature-type">BlockPlugin</a>
+						<span class="tsd-signature-symbol"> &amp; </span>
+						<a href="../interfaces/_api_.fileplugin.html" class="tsd-signature-type">FilePlugin</a>
+					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -91,81 +89,43 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="messagebag.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="messagebag.html#errors" class="tsd-kind-icon">errors</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="messagebag.html#scope" class="tsd-kind-icon">scope</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="messagebag.html#tips" class="tsd-kind-icon">tips</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_plugins_less_.lessplugin.html#ext_regex" class="tsd-kind-icon">EXT_<wbr>REGEX</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_plugins_less_.lessplugin.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="messagebag.html#error" class="tsd-kind-icon">error</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="messagebag.html#haserror" class="tsd-kind-icon">has<wbr>Error</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="messagebag.html#setscope" class="tsd-kind-icon">set<wbr>Scope</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="messagebag.html#tip" class="tsd-kind-icon">tip</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="messagebag.html#write" class="tsd-kind-icon">write</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_plugins_less_.lessplugin.html#processblock" class="tsd-kind-icon">process<wbr>Block</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_plugins_less_.lessplugin.html#processfile" class="tsd-kind-icon">process<wbr>File</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_plugins_less_.lessplugin.html#testblock" class="tsd-kind-icon">test<wbr>Block</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_plugins_less_.lessplugin.html#testfile" class="tsd-kind-icon">test<wbr>File</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Message<wbr>Bag<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="messagebag.html" class="tsd-signature-type">MessageBag</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L16">index.ts:16</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="messagebag.html" class="tsd-signature-type">MessageBag</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="errors" class="tsd-anchor"></a>
-					<h3>errors</h3>
-					<div class="tsd-signature tsd-kind-icon">errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="ext_regex" class="tsd-anchor"></a>
+					<h3>EXT_<wbr>REGEX</h3>
+					<div class="tsd-signature tsd-kind-icon">EXT_<wbr>REGEX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> =&nbsp;/\.less$/gi</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L14">index.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/plugins/less.ts#L5">plugins/less.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="scope" class="tsd-anchor"></a>
-					<h3>scope</h3>
-					<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"less"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L16">index.ts:16</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="tips" class="tsd-anchor"></a>
-					<h3>tips</h3>
-					<div class="tsd-signature tsd-kind-icon">tips<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L15">index.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/plugins/less.ts#L4">plugins/less.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -173,105 +133,103 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="error" class="tsd-anchor"></a>
-					<h3>error</h3>
+					<a name="processblock" class="tsd-anchor"></a>
+					<h3>process<wbr>Block</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">process<wbr>Block<span class="tsd-signature-symbol">(</span>block<span class="tsd-signature-symbol">: </span><a href="../interfaces/_api_.customblock.html" class="tsd-signature-type">CustomBlock</a>, api<span class="tsd-signature-symbol">: </span><a href="../interfaces/_api_.componentrewriterapi.html" class="tsd-signature-type">ComponentRewriterAPI</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L27">index.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/plugins/less.ts#L24">plugins/less.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>error: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<h5>block: <a href="../interfaces/_api_.customblock.html" class="tsd-signature-type">CustomBlock</a></h5>
+								</li>
+								<li>
+									<h5>api: <a href="../interfaces/_api_.componentrewriterapi.html" class="tsd-signature-type">ComponentRewriterAPI</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="haserror" class="tsd-anchor"></a>
-					<h3>has<wbr>Error</h3>
+					<a name="processfile" class="tsd-anchor"></a>
+					<h3>process<wbr>File</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Error<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">process<wbr>File<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><a href="../interfaces/_api_.customfile.html" class="tsd-signature-type">CustomFile</a>, api<span class="tsd-signature-symbol">: </span><a href="../interfaces/_api_.filerewriterapi.html" class="tsd-signature-type">FileRewriterAPI</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L35">index.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/plugins/less.ts#L11">plugins/less.ts:11</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>file: <a href="../interfaces/_api_.customfile.html" class="tsd-signature-type">CustomFile</a></h5>
+								</li>
+								<li>
+									<h5>api: <a href="../interfaces/_api_.filerewriterapi.html" class="tsd-signature-type">FileRewriterAPI</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="testblock" class="tsd-anchor"></a>
+					<h3>test<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">test<wbr>Block<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, srcOrLang<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/plugins/less.ts#L20">plugins/less.ts:20</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> srcOrLang: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setscope" class="tsd-anchor"></a>
-					<h3>set<wbr>Scope</h3>
+					<a name="testfile" class="tsd-anchor"></a>
+					<h3>test<wbr>File</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Scope<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">test<wbr>File<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L23">index.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/plugins/less.ts#L7">plugins/less.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<h5>filename: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tip" class="tsd-anchor"></a>
-					<h3>tip</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">tip<span class="tsd-signature-symbol">(</span>tip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L31">index.ts:31</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>tip: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="write" class="tsd-anchor"></a>
-					<h3>write</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">write<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ProcessedResults</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/znck/vuepack/blob/v0.2.0/src/index.ts#L39">index.ts:39</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ProcessedResults</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -283,61 +241,70 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_api_.html">"api"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_bin_vuec_.html">"bin/vuec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_plugins_babel_.html">"plugins/babel"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_plugins_css_.html">"plugins/css"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_plugins_index_.html">"plugins/index"</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_plugins_less_.html">"plugins/less"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_plugins_sass_.html">"plugins/sass"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_plugins_template_.html">"plugins/template"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_plugins_typescript_.html">"plugins/typescript"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_utils_.html">"utils"</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="componentrewriter.html" class="tsd-kind-icon">Component<wbr>Rewriter</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="filerewriter.html" class="tsd-kind-icon">File<wbr>Rewriter</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="messagebag.html" class="tsd-kind-icon">Message<wbr>Bag</a>
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_plugins_less_.lessplugin.html" class="tsd-kind-icon">Less<wbr>Plugin</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="messagebag.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_plugins_less_.lessplugin.html#ext_regex" class="tsd-kind-icon">EXT_<wbr>REGEX</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="messagebag.html#errors" class="tsd-kind-icon">errors</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="messagebag.html#scope" class="tsd-kind-icon">scope</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="messagebag.html#tips" class="tsd-kind-icon">tips</a>
+								<a href="_plugins_less_.lessplugin.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="messagebag.html#error" class="tsd-kind-icon">error</a>
+								<a href="_plugins_less_.lessplugin.html#processblock" class="tsd-kind-icon">process<wbr>Block</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="messagebag.html#haserror" class="tsd-kind-icon">has<wbr>Error</a>
+								<a href="_plugins_less_.lessplugin.html#processfile" class="tsd-kind-icon">process<wbr>File</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="messagebag.html#setscope" class="tsd-kind-icon">set<wbr>Scope</a>
+								<a href="_plugins_less_.lessplugin.html#testblock" class="tsd-kind-icon">test<wbr>Block</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="messagebag.html#tip" class="tsd-kind-icon">tip</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="messagebag.html#write" class="tsd-kind-icon">write</a>
+								<a href="_plugins_less_.lessplugin.html#testfile" class="tsd-kind-icon">test<wbr>File</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#compile" class="tsd-kind-icon">compile</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#normalizeblock" class="tsd-kind-icon">normalize<wbr>Block</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#stringifyblock" class="tsd-kind-icon">stringify<wbr>Block</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

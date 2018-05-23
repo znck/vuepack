@@ -127,7 +127,7 @@ async function main(argv: string[]) {
 
     hasAnyErrors = await run(dir, dest, files, {
       plugins: config.plugins,
-      toStdOut: !hasConfigFile && !options.outDir && config.paths.length === 1,
+      toStdOut: !hasConfigFile && !options.outDir && config.paths.length === 1 && isFile,
       silent: config.silent,
       overwrite: config.force
     })

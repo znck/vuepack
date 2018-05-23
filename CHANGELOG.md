@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/znck/vuepack/compare/v0.2.0...v0.3.0) (2018-05-23)
+
+
+### Bug Fixes
+
+* Do not print to standard out if single directory is provided ([48170d0](https://github.com/znck/vuepack/commit/48170d0))
+
+
+### Features
+
+* Config can be function returning a object ([da10cd5](https://github.com/znck/vuepack/commit/da10cd5))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/znck/vuepack/compare/v0.1.3...v0.2.0) (2018-05-11)
 

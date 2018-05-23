@@ -1,6 +1,6 @@
 {
   "name": "@znck/vuec",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Package Vue components as they should be!",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

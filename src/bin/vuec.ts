@@ -103,7 +103,11 @@ async function main(argv: string[]) {
     logger.info('Using config from vuec.config.js.')
     const local = require(configPath)
 
-    config = { ...config, ...local }
+    if (typeof local === 'function') {
+      config = { ...config, ...local(config) }
+    } else {
+      config = { ...config, ...local }
+    }
   }
   let hasAnyErrors: boolean = true
 

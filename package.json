@@ -1,5 +1,5 @@
 {
-  "name": "@znck/vuec",
+  "name": "vuepack",
   "version": "0.3.0",
   "description": "Package Vue components as they should be!",
   "main": "dist/index.js",
@@ -34,7 +34,8 @@
     "dist"
   ],
   "bin": {
-    "vuec": "dist/bin/vuec.js"
+    "vuec": "dist/bin/vuec.js",
+    "vuepack": "dist/bin/vuec.js"
   },
   "homepage": "https://github.com/znck/vuepack#readme",
   "dependencies": {

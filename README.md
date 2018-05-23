@@ -7,7 +7,7 @@ A tool to normalize `.vue` components so they can be published in NPM packages a
 ## Usage
 
 ``` bash
-npm install -g @znck/vuec
+npm install -g vuepack
 
 vuec -h
 ```

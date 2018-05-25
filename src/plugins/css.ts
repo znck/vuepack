@@ -3,8 +3,8 @@ import {BlockPlugin, ComponentRewriterAPI, CustomBlock} from "../api"
 export default class CSSPlugin implements BlockPlugin {
   name: string = 'css'
 
-  EXT_REGEX = /\.css$/gi
-  TYPE_REGEX =/^(css|postcss)$/gi
+  EXT_REGEX = /\.css$/i
+  TYPE_REGEX =/^(css|postcss)$/i
 
   testBlock(type: string, srcOrLang?: string): boolean {
     return type === 'style' &&

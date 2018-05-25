@@ -9,7 +9,7 @@ import promised from '@znck/promised'
 
 export default class SassPlugin implements Plugin {
   name: 'sass'
-  EXT_REGEX = /\.(scss|sass)$/gi
+  EXT_REGEX = /\.(scss|sass)$/i
 
   testFile(filename: string): boolean {
     return this.EXT_REGEX.test(filename)

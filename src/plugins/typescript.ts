@@ -6,7 +6,7 @@ export default class TypescriptPlugin implements BlockPlugin, FilePlugin {
   name: string = 'typescript'
 
   EXT_REGEX = /\.ts$/gi
-  TYPE_REGEX = /^(ts|typescript)$/gi
+  TYPE_REGEX = /^(ts|typescript)$/i
 
   testBlock(type: string, srcOrLang?: string): boolean {
     return !!(type === 'script' && srcOrLang

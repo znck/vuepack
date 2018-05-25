@@ -3,8 +3,8 @@ import {BlockPlugin, ComponentRewriterAPI, CustomBlock} from "../api"
 export default class TemplatePlugin implements BlockPlugin {
   name: string = 'template'
 
-  EXT_REGEX = /\.html$/gi
-  TYPE_REGEX =/^(html)$/gi
+  EXT_REGEX = /\.html$/i
+  TYPE_REGEX =/^(html)$/i
 
   testBlock(type: string, srcOrLang?: string): boolean {
     return type === 'template' &&

@@ -5,8 +5,8 @@ import promised from "@znck/promised"
 export default class BabelPlugin implements BlockPlugin, FilePlugin {
   name: string = 'babel'
 
-  EXT_REGEX = /\.js$/gi
-  TYPE_REGEX = /^(js|babel|javascript)$/gi
+  EXT_REGEX = /\.js$/i
+  TYPE_REGEX = /^(js|babel|javascript)$/i
 
   testBlock(type: string, srcOrLang?: string): boolean {
     return type === 'script' &&

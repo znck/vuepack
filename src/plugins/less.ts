@@ -2,7 +2,7 @@ import {ComponentRewriterAPI, CustomBlock, CustomFile, FileRewriterAPI, Plugin} 
 
 export default class LessPlugin implements Plugin {
   name: 'less'
-  EXT_REGEX = /\.less$/gi
+  EXT_REGEX = /\.less$/i
 
   testFile(filename: string): boolean {
     return this.EXT_REGEX.test(filename)

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.2"></a>
+## [0.3.2](https://github.com/znck/vuepack/compare/v0.3.1...v0.3.2) (2018-06-01)
+
+
+### Bug Fixes
+
+* Resolve babel preset path ([5e098fc](https://github.com/znck/vuepack/commit/5e098fc))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/znck/vuepack/compare/v0.3.0...v0.3.1) (2018-05-25)
 

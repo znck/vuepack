@@ -1,6 +1,6 @@
 {
   "name": "vuepack",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Package Vue components as they should be!",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

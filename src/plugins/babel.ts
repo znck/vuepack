@@ -33,7 +33,7 @@ export default class BabelPlugin implements BlockPlugin, FilePlugin {
   async compile(filename: string, source: string): Promise<string> {
     const result = await promised({transform}).transform(source, {
       filename,
-      presets: [['@babel/preset-env', {modules: false, loose: true}]],
+      presets: [[require.resolve('@babel/preset-env'), {modules: false, loose: true}]],
       comments: false
     })
 
